@@ -1,12 +1,17 @@
 function solution(arr){
     let sum;
     let result = arr.reduce((acc, v)=> acc + v, 0)
-    arr.forEach(el => {
+    
+    arr.forEach((el,idx) => {
         sum = el
-        arr.forEach(el2=>{
+        arr.forEach((el2,idx)=>{
             sum += el2
             if(result - sum === 100){
-                console.log(i, j)
+                arr.splice(idx, 1)
+                arr.splice(idx, 2)
+                console.log(arr)
+            } else {
+                sum = el
             }
         })
     }); 
